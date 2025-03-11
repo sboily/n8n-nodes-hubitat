@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8DC63F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#69AA35;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="500" height="500" fill="url(#greenGradient)" />
+  
+  <!-- Circle -->
+  <path d="M250,100 
+           a150,150 0 1,1 -0.1,0 
+           M250,100 
+           a150,150 0 1,0 0.1,0" 
+        fill="none" 
+        stroke="#FFFFFF" 
+        stroke-width="25"
+        stroke-linecap="round"
+        stroke-dasharray="940 50" />
+  
+  <!-- House Icon -->
+  <path d="M250,150 L160,220 L160,330 L340,330 L340,220 Z" 
+        fill="none" 
+        stroke="#FFFFFF" 
+        stroke-width="25"
+        stroke-linejoin="round" />
+</svg>

@@ -1,0 +1,54 @@
+root: true
+env:
+  browser: true
+  es2021: true
+  node: true
+  jest: true
+extends:
+  - 'eslint:recommended'
+  - 'plugin:@typescript-eslint/recommended'
+  - 'plugin:jest/recommended'
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: 12
+  sourceType: module
+  project: './tsconfig.json'
+plugins:
+  - '@typescript-eslint'
+  - 'jest'
+ignorePatterns:
+  - 'dist/'
+  - 'node_modules/'
+  - '*.js'
+  - 'package.json'
+rules:
+  no-console:
+    - warn
+    - allow: ['warn', 'error']
+  no-debugger: warn
+  no-duplicate-imports: error
+  no-unused-vars: off
+  no-empty-function: off
+  no-useless-constructor: off
+  '@typescript-eslint/no-unused-vars':
+    - error
+    - argsIgnorePattern: '^_'
+      varsIgnorePattern: '^_'
+  '@typescript-eslint/explicit-function-return-type': off
+  '@typescript-eslint/explicit-module-boundary-types': off
+  '@typescript-eslint/no-explicit-any': off
+  '@typescript-eslint/no-empty-function':
+    - error
+    - allow: ['constructors']
+  '@typescript-eslint/no-inferrable-types': warn
+  '@typescript-eslint/no-non-null-assertion': warn
+  '@typescript-eslint/ban-ts-comment': warn
+  jest/no-disabled-tests: warn
+  jest/no-focused-tests: error
+  jest/no-identical-title: error
+  jest/valid-expect: error
+overrides:
+  - files: ['*.test.ts']
+    rules:
+      '@typescript-eslint/no-explicit-any': off
+      '@typescript-eslint/no-non-null-assertion': off
