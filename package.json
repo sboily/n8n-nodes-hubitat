@@ -11,7 +11,7 @@
     "smart home"
   ],
   "license": "MIT",
-  "homepage": "https://n8n.io",
+  "homepage": "https://github.com/sboily/n8n-nodes-hubitat.git",
   "author": {
     "name": "Sylvain BOILY",
     "email": "sylvainboilydroid@gmail.com"
@@ -32,7 +32,7 @@
     "test:coverage": "jest --coverage --config jest.config.js",
     "test:unit": "jest --testPathPattern=test/unit --config jest.config.js",
     "test:integration": "jest --testPathPattern=test/integration --config jest.config.js",
-    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
+    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js src/nodes src/credentials"
   },
   "files": [
     "dist"
