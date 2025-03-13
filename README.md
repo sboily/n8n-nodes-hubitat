@@ -6,6 +6,13 @@ This n8n integration allows you to interact with your Hubitat devices directly f
 ```bash
 npm install n8n-nodes-hubitat
 ```
+
+Use the variable env N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE to true to authorize the IA tool from the community.
+```
+export N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
+n8n start
+```
+
 ### Method 2: Development Installation
 ```bash
 git clone https://github.com/sboily/n8n-nodes-hubitat.git
@@ -19,6 +26,39 @@ Then, in your n8n installation folder:
 cd ~/.n8n
 npm link n8n-nodes-hubitat
 ```
+
+Use the variable env N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE to true to authorize the IA tool from the community.
+```
+export N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
+n8n start
+```
+
+### Method 3: Docker compose
+
+Check https://github.com/n8n-io/self-hosted-ai-starter-kit for more information.
+Use the variable env N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE to true to authorize the IA tool from the community.
+
+```
+...
+
+x-n8n: &service-n8n
+  image: n8nio/n8n:latest
+  networks: ['demo']
+  environment:
+    - DB_TYPE=postgresdb
+    - DB_POSTGRESDB_HOST=postgres
+    - DB_POSTGRESDB_USER=${POSTGRES_USER}
+    - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
+    - N8N_DIAGNOSTICS_ENABLED=false
+    - N8N_PERSONALIZATION_ENABLED=false
+    - N8N_ENCRYPTION_KEY
+    - N8N_USER_MANAGEMENT_JWT_SECRET
+    - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
+
+...
+```
+
+
 ### Compatibility Note
 This node is compatible with n8n version 1.0.0 and above. For older versions of n8n, please check the releases for a compatible version.
 
